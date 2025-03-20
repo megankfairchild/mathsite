@@ -35,6 +35,14 @@ const decimalToBinary = (input) => {
   }
 };
 
+const decimalToHex = (inputHex) => {
+ // Convert the decimal number to hexadecimal
+ const hexValue = parseInt(inputHex, 10).toString(16).toUpperCase();
+
+ // Display the result
+ outputBox.textContent = `${hexValue}`;
+};
+
 
 const checkUserInput = () => {
   const inputInt = parseInt(numberInput.value);
@@ -49,15 +57,15 @@ const checkUserInput = () => {
 };
 
 const checkUserInputHex = () => {
-  const inputInt = parseInt(numberInput.value);
+  const inputIntHex = parseInt(numberInputHex.value);
 
-  if (!numberInput.value || isNaN(inputInt) || inputInt < 0) {
+  if (!numberInputHex.value || isNaN(inputIntHex) || inputIntHex < 0) {
     alert("Please provide a decimal number greater than or equal to 0");
     return;
   }
 
-  result.textContent = decimalToHex(inputInt);
-  numberInput.value = "";
+  result.textContent = decimalToHex(inputIntHex);
+  //numberInputHex.value = "";
 };
 
 convertBtn.addEventListener("click", checkUserInput);
